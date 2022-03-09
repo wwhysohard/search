@@ -13,9 +13,36 @@
     <groupId>com.github.wwhysohard</groupId>
     <artifactId>search</artifactId>
     <version>${revision}</version>
+
     <name>Search</name>
     <description>JPA Criteria API searching library</description>
     <packaging>jar</packaging>
+    <url>https://github.com/wwhysohard/search</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <developerConnection>scm:git:ssh://github.com/wwhysohard/search.git</developerConnection>
+        <connection>${project.scm.developerConnection}</connection>
+        <url>${project.url}</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>wwhysohard</id>
+            <name>Khanif Nursafi</name>
+            <email>47knursafi@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>1.8</java.version>
