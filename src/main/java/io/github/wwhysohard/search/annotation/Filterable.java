@@ -1,4 +1,6 @@
-package com.github.wwhysohard.search.annotation;
+package io.github.wwhysohard.search.annotation;
+
+import io.github.wwhysohard.search.utils.GenericCriteriaPredicate;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,7 +9,7 @@ import java.lang.annotation.Target;
 
 /**
  * The annotated field will be allowed for filtering by
- * {@link com.github.wwhysohard.search.utils.GenericCriteriaPredicate}
+ * {@link GenericCriteriaPredicate}
  */
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

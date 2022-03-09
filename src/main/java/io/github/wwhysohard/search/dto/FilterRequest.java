@@ -1,6 +1,7 @@
-package com.github.wwhysohard.search.dto;
+package io.github.wwhysohard.search.dto;
 
-import com.github.wwhysohard.search.enums.QueryOperator;
+import io.github.wwhysohard.search.enums.QueryOperator;
+import io.github.wwhysohard.search.utils.GenericCriteriaPredicate;
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 /**
  * Used to build {@link javax.persistence.criteria.Predicate} using
- * {@link com.github.wwhysohard.search.utils.GenericCriteriaPredicate}
+ * {@link GenericCriteriaPredicate}
  */
 @Data
 @Builder(setterPrefix = "with")

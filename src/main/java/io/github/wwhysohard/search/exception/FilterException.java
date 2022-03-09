@@ -1,6 +1,6 @@
-package com.github.wwhysohard.search.exception;
+package io.github.wwhysohard.search.exception;
 
-import com.github.wwhysohard.search.enums.ErrorCode;
+import io.github.wwhysohard.search.enums.ErrorCode;
 
 /**
  * Reports the cause of the query processing error

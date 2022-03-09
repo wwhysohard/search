@@ -1,4 +1,4 @@
-package com.github.wwhysohard.search.enums;
+package io.github.wwhysohard.search.enums;
 
 /**
  * Indicates the operation applied to the filtering

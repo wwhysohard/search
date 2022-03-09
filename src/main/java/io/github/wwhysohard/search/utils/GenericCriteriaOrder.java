@@ -1,9 +1,9 @@
-package com.github.wwhysohard.search.utils;
+package io.github.wwhysohard.search.utils;
 
-import com.github.wwhysohard.search.dto.SortRequest;
-import com.github.wwhysohard.search.enums.ErrorCode;
-import com.github.wwhysohard.search.exception.FilterException;
-import com.github.wwhysohard.search.validator.FilterableValidator;
+import io.github.wwhysohard.search.dto.SortRequest;
+import io.github.wwhysohard.search.enums.ErrorCode;
+import io.github.wwhysohard.search.exception.FilterException;
+import io.github.wwhysohard.search.validator.FilterableValidator;
 
 import javax.persistence.criteria.*;
 import java.util.ArrayList;

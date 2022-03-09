@@ -1,6 +1,7 @@
-package com.github.wwhysohard.search.dto;
+package io.github.wwhysohard.search.dto;
 
-import com.github.wwhysohard.search.enums.SortOrder;
+import io.github.wwhysohard.search.enums.SortOrder;
+import io.github.wwhysohard.search.utils.GenericCriteriaOrder;
 import lombok.Builder;
 import lombok.Data;
 
@@ -8,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * Used to build {@link javax.persistence.criteria.Order} using
- * {@link com.github.wwhysohard.search.utils.GenericCriteriaOrder}
+ * {@link GenericCriteriaOrder}
  */
 @Data
 @Builder(setterPrefix = "with")

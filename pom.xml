@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.github.wwhysohard</groupId>
+    <groupId>io.github.wwhysohard</groupId>
     <artifactId>search</artifactId>
     <version>${revision}</version>
 

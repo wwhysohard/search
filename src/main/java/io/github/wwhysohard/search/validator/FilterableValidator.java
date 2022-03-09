@@ -1,6 +1,7 @@
-package com.github.wwhysohard.search.validator;
+package io.github.wwhysohard.search.validator;
 
-import com.github.wwhysohard.search.annotation.Filterable;
+import io.github.wwhysohard.search.annotation.Filterable;
+import io.github.wwhysohard.search.dto.FilterRequest;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -25,7 +26,7 @@ public class FilterableValidator {
      * Applied recursively to JPA related models if <code>joinable</code> is set to <code>true</code>.
      *
      * @param clazz {@link Class} of the given model
-     * @param fullFieldName the specified <code>field</code> of {@link com.github.wwhysohard.search.dto.FilterRequest}
+     * @param fullFieldName the specified <code>field</code> of {@link FilterRequest}
      *                      which is either field name or full join path
      * @param <T> generic type of the given model
      *

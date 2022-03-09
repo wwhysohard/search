@@ -1,6 +1,6 @@
-package com.github.wwhysohard.search.validator;
+package io.github.wwhysohard.search.validator;
 
-import com.github.wwhysohard.search.annotation.Filterable;
+import io.github.wwhysohard.search.annotation.Filterable;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

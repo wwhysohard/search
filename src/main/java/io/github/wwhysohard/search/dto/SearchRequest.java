@@ -1,4 +1,4 @@
-package com.github.wwhysohard.search.dto;
+package io.github.wwhysohard.search.dto;
 
 import lombok.Getter;
 import lombok.Setter;
