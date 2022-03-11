@@ -38,6 +38,32 @@ To use this library, add the following dependency in your `pom.xml` :
 
 
 ## Usage
+`GenericSpecification` is a base class for your JPA Specifications. All you need is `extend` your JPA Specification class from `GenericSpecification` :
+
+```
+public class AuthorSpecification extends GenericSpecification<Author> {
+
+    public AuthorSpecification(SearchRequest request) {
+        super(request, Author.class);
+    }
+    
+}
+```
+
+If you want to apply filtering and sorting on JPA related fields, joins with those fields have to be added into `joins` Map. It can be done by overriding `initializeJoins` method:
+
+```
+@Override
+protected void initializeJoins(Root<Author> root) {
+    Join<Author, Book> books = root.join("books", JoinType.LEFT);
+    joins.put("books", books);
+}
+```
+
+Note that join name must match field name or one of names defined in `@Filterable` annotation `names`.
+
+Rights-based access restriction can be done by overriding `processAccess` method.
+
 `GenericCriteriaPredicate` lets you construct JPA Criteria Predicate by provided filters:
 
 ```
@@ -52,9 +78,9 @@ Predicates on given filters will be combined with `AND` operation. `genericType`
 List<Order> orders = GenericCriteriaOrder.get(root, criteriaBuilder, joins, sorts, genericType);
 ```
 
-Filters and sorts can be almost any kind, as long as the field to be filtered is marked as `@Filterable` and, if it is a JPA related field, the `joinable` in the annotation must to be set to `true`.
-
 Complete code can be found [_here_](https://github.com/wwhysohard/sample-search-usage).
+
+Filters and sorts can be almost any kind, as long as the field to be filtered is marked as `@Filterable` and, if it is a JPA related field, the `joinable` in the annotation must to be set to `true`.
 
 Examples:
 
