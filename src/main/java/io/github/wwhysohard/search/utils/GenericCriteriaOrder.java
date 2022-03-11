@@ -62,7 +62,7 @@ public class GenericCriteriaOrder {
      */
     private static <T> void validateFieldSorting(Class<T> clazz, String field) {
         if (!FilterableValidator.isValid(clazz, field)) {
-            throw new FilterException(ErrorCode.INVALID_SORTING_FIELD);
+            throw new FilterException(ErrorCode.FIELD_IS_NOT_ALLOWED_FOR_SORTING);
         }
     }
 
@@ -92,7 +92,7 @@ public class GenericCriteriaOrder {
      */
     private static Join<?, ?> getJoin(Map<String, Join<?, ?>> joins, String joinName) {
         Join<?, ?> join = joins.get(joinName);
-        if (join == null) throw new FilterException(ErrorCode.INVALID_SORTING_FIELD);
+        if (join == null) throw new FilterException(ErrorCode.FIELD_IS_NOT_ALLOWED_FOR_SORTING);
         return join;
     }
 

@@ -48,6 +48,9 @@ public enum ErrorCode {
      */
     FILTERS_CANNOT_BE_EMPTY,
 
-    INVALID_SORTING_FIELD,
+    /**
+     * Same as {@link ErrorCode#FIELD_IS_NOT_ALLOWED_FOR_FILTERING} but indicates that the specified field is not allowed for sorting
+     */
+    FIELD_IS_NOT_ALLOWED_FOR_SORTING,
 
 }
