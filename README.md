@@ -1,4 +1,4 @@
-# Search [![GitHub license](https://img.shields.io/github/license/wwhysohard/search)](https://github.com/wwhysohard/search/blob/master/LICENSE) [![Maven Central](https://shields.api-test.nl:/maven-central/v/io.github.wwhysohard/search?color=1&versionPrefix=1.0.0)](https://search.maven.org/artifact/io.github.wwhysohard/search/1.0.0/jar)
+# Search [![GitHub license](https://img.shields.io/github/license/wwhysohard/search)](https://github.com/wwhysohard/search/blob/master/LICENSE) [![Maven Central](https://img.shields.io/maven-central/v/io.github.wwhysohard/search.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.wwhysohard%22%20AND%20a:%22search%22)
 > [_Sample library usage_](https://github.com/wwhysohard/sample-search-usage). 
 
 ## Table of Contents
@@ -26,9 +26,9 @@ This library is intended to help you create JPA Specifications faster. Basic app
 
 
 ## Setup
-To use this library, add the following dependency in your `pom.xml` :
+To use this library, add the following dependency to your `pom.xml` :
 
-```
+``` xml
 <dependency>
     <groupId>io.github.wwhysohard</groupId>
     <artifactId>search</artifactId>
@@ -36,11 +36,17 @@ To use this library, add the following dependency in your `pom.xml` :
 </dependency>
 ```
 
+Or, if you are using Gradle, to `build.gradle` :
+
+``` groovy
+implementation 'io.github.wwhysohard:search:1.0.0'
+```
+
 
 ## Usage
 `GenericSpecification` is a base class for your JPA Specifications. All you need is `extend` your JPA Specification class from `GenericSpecification` :
 
-```
+``` java
 public class AuthorSpecification extends GenericSpecification<Author> {
 
     public AuthorSpecification(SearchRequest request) {
@@ -52,7 +58,7 @@ public class AuthorSpecification extends GenericSpecification<Author> {
 
 If you want to apply filtering and sorting on JPA related fields, joins with those fields have to be added into `joins` Map. It can be done by overriding `initializeJoins` method:
 
-```
+``` java
 @Override
 protected void initializeJoins(Root<Author> root) {
     Join<Author, Book> books = root.join("books", JoinType.LEFT);
@@ -66,7 +72,7 @@ Rights-based access restriction can be done by overriding `processAccess` method
 
 `GenericCriteriaPredicate` lets you construct JPA Criteria Predicate by provided filters:
 
-```
+``` java
 Predicate predicate = GenericCriteriaPredicate.get(root, criteriaBuilder, joins, filters, QueryOperator.AND, genericType);
 ```
 
@@ -74,7 +80,7 @@ Predicates on given filters will be combined with `AND` operation. `genericType`
 
 `GenericCriteriaOrder` collects list of JPA Criteria Orders on which sorting can be applied:
 
-```
+``` java
 List<Order> orders = GenericCriteriaOrder.get(root, criteriaBuilder, joins, sorts, genericType);
 ```
 
@@ -84,7 +90,7 @@ Filters and sorts can be almost any kind, as long as the field to be filtered is
 
 Examples:
 
-```
+``` json
 {
     "filters": [
         {
@@ -96,7 +102,7 @@ Examples:
 }
 ```
 
-```
+``` json
 {
     "filters": [
         {
@@ -119,7 +125,7 @@ Examples:
 }
 ```
 
-```
+``` json
 {
     "filters": [
         {
