@@ -1,4 +1,4 @@
-# Search [![GitHub license](https://img.shields.io/github/license/wwhysohard/search)](https://github.com/wwhysohard/search/blob/master/LICENSE) 
+# Search [![GitHub license](https://img.shields.io/github/license/wwhysohard/search)](https://github.com/wwhysohard/search/blob/master/LICENSE) [![Maven Central](https://shields.api-test.nl:/maven-central/v/io.github.wwhysohard/search?color=1&versionPrefix=1.0.0)](https://search.maven.org/artifact/io.github.wwhysohard/search/1.0.0/jar)
 > [_Sample library usage_](https://github.com/wwhysohard/sample-search-usage). 
 
 ## Table of Contents
