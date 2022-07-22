@@ -12,7 +12,7 @@
 
     <groupId>io.github.wwhysohard</groupId>
     <artifactId>search</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>Search</name>
     <description>JPA Criteria API searching library</description>
@@ -30,7 +30,7 @@
     <scm>
         <developerConnection>scm:git:ssh://github.com/wwhysohard/search.git</developerConnection>
         <connection>${project.scm.developerConnection}</connection>
-        <url>${project.url}</url>
+        <url>https://github.com/wwhysohard/search</url>
     </scm>
 
     <developers>
