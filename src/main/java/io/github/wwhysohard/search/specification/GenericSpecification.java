@@ -23,6 +23,7 @@ public abstract class GenericSpecification<T> implements Specification<T> {
 
     private final SearchRequest request;
     private final Class<T> genericType;
+    private final boolean distinct;
 
     protected final Map<String, Join<?, ?>> joins;
     protected final List<Predicate> predicates;
@@ -33,9 +34,10 @@ public abstract class GenericSpecification<T> implements Specification<T> {
      * @param request {@link SearchRequest} with filters and sorts
      * @param genericType {@link Class} instance of a model
      */
-    protected GenericSpecification(SearchRequest request, Class<T> genericType) {
+    protected GenericSpecification(SearchRequest request, Class<T> genericType, boolean distinct) {
         this.request = request;
         this.genericType = genericType;
+        this.distinct = distinct;
 
         this.joins = new HashMap<>();
         this.predicates = new ArrayList<>();
@@ -48,6 +50,7 @@ public abstract class GenericSpecification<T> implements Specification<T> {
         filter(root, criteriaBuilder);
         sort(root, query, criteriaBuilder);
 
+        query.distinct(distinct);
         return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
     }
 
