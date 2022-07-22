@@ -128,6 +128,8 @@ public class GenericCriteriaPredicate {
                 return criteriaBuilder.like(from.get(filter.getFieldName()), "%" + filter.getValue() + "%");
             case IN:
                 return from.get(filter.getFieldName()).in(cast(from.get(filter.getFieldName()).getJavaType(), filter.getValues()));
+            case NOT_IN:
+                return from.get(filter.getFieldName()).in(cast(from.get(filter.getFieldName()).getJavaType(), filter.getValues())).not();
             case NULL:
                 return criteriaBuilder.isNull(from.get(filter.getFieldName()));
             case NOT_NULL:

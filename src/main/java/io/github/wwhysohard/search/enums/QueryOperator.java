@@ -46,6 +46,11 @@ public enum QueryOperator {
     IN,
 
     /**
+     * The specified <code>field</code> value must not occur in the specified <code>values</code>
+     */
+    NOT_IN,
+
+    /**
      * The specified <code>field</code> must be <code>null</code>
      */
     NULL,
