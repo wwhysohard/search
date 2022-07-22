@@ -75,7 +75,7 @@ public abstract class GenericSpecification<T> implements Specification<T> {
      * @param root {@link Root} of the model on which filtering will be processed
      * @param criteriaBuilder {@link CriteriaBuilder} which will be used to construct {@link Predicate}
      */
-    private void filter(Root<T> root, CriteriaBuilder criteriaBuilder) {
+    protected void filter(Root<T> root, CriteriaBuilder criteriaBuilder) {
         List<FilterRequest> filters = request.getFilters();
 
         if (filters != null && !filters.isEmpty()) {
@@ -91,7 +91,7 @@ public abstract class GenericSpecification<T> implements Specification<T> {
      * @param query {@link CriteriaQuery} which will be used to sort result
      * @param criteriaBuilder {@link CriteriaBuilder} which will be used to construct {@link Order}s
      */
-    private void sort(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
+    protected void sort(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
         List<SortRequest> sorts = request.getSorts();
 
         if (sorts != null && !sorts.isEmpty()) {
