@@ -32,14 +32,14 @@ To use this library, add the following dependency to your `pom.xml` :
 <dependency>
     <groupId>io.github.wwhysohard</groupId>
     <artifactId>search</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 Or, if you are using Gradle, to `build.gradle` :
 
 ``` groovy
-implementation 'io.github.wwhysohard:search:1.0.0'
+implementation 'io.github.wwhysohard:search:1.0.1'
 ```
 
 
@@ -50,7 +50,7 @@ implementation 'io.github.wwhysohard:search:1.0.0'
 public class AuthorSpecification extends GenericSpecification<Author> {
 
     public AuthorSpecification(SearchRequest request) {
-        super(request, Author.class);
+        super(request, Author.class, true); // third argument specifies whether you want to fetch distinct records
     }
     
 }
