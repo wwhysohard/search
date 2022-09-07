@@ -38,7 +38,7 @@ public class FilterableValidator {
         int indexOfPoint = fullFieldName.indexOf(".");
         String fieldName = (indexOfPoint != -1) ? fullFieldName.substring(0, indexOfPoint) : fullFieldName;
 
-        Field field = getField(clazz, fieldName);
+        Field field = getFieldFromHierarchy(clazz, fieldName);
         if (field == null) return false;
 
         Filterable filterable = field.getDeclaredAnnotation(Filterable.class);
@@ -48,6 +48,29 @@ public class FilterableValidator {
         if (nextJoin.isEmpty()) return !filterable.joinable();
 
         return filterable.joinable() && isValid(getJoinObjectType(field), nextJoin);
+    }
+
+    /**
+     * Uses <code>getField</code> method to find {@link Field} from the entire model hierarchy
+     * allowing to use domain model inheritance
+     *
+     * @param clazz {@link Class} of the given model
+     * @param fieldName <code>fieldName</code> by which {@link Field} will be searched in the given {@link Class}
+     * @param <T> <T> generic type of the given model
+     *
+     * @return {@link Field} by the specified <code>fieldName</code> if exists somewhere
+     * in the hierarchy of the provided <code>clazz</code>, <code>null</code> otherwise
+     */
+    private static <T> Field getFieldFromHierarchy(Class<T> clazz, String fieldName) {
+        Field field = getField(clazz, fieldName);
+        Class<?> superclass = clazz.getSuperclass();
+
+        while (field == null && superclass != null) {
+            field = getField(superclass, fieldName);
+            superclass = superclass.getSuperclass();
+        }
+
+        return field;
     }
 
     /**
@@ -70,7 +93,7 @@ public class FilterableValidator {
 
     /**
      * Searches for {@link Field} in the provided {@link Class} by <code>names</code> specified in
-     * @{@link Filterable} annotated fields
+     * {@link Filterable} annotated fields
      *
      * @param clazz {@link Class} of the given model
      * @param fieldName <code>fieldName</code> by which {@link Field} will be searched in the given {@link Class}'s fields
