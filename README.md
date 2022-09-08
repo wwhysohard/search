@@ -32,14 +32,14 @@ To use this library, add the following dependency to your `pom.xml` :
 <dependency>
     <groupId>io.github.wwhysohard</groupId>
     <artifactId>search</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
-Or, if you are using Gradle, to `build.gradle` :
+Or, if you are using Gradle, `build.gradle` :
 
 ``` groovy
-implementation 'io.github.wwhysohard:search:1.0.1'
+implementation 'io.github.wwhysohard:search:1.1.0'
 ```
 
 
@@ -86,7 +86,7 @@ List<Order> orders = GenericCriteriaOrder.get(root, criteriaBuilder, joins, sort
 
 Complete code can be found [_here_](https://github.com/wwhysohard/sample-search-usage).
 
-Filters and sorts can be almost any kind, as long as the field to be filtered is marked as `@Filterable` and, if it is a JPA related field, the `joinable` in the annotation must to be set to `true`.
+Filters and sorts can be almost any kind, as long as the field to be filtered is marked as `@Filterable` and, if it is a JPA related field, the `joinable` in the annotation is set to `true`.
 
 Examples:
 
@@ -113,7 +113,7 @@ Examples:
         {
             "field": "name",
             "operator": "LIKE",
-            "value": "ger"
+            "value": "Harry"
         }
     ],
     "sorts": [
