@@ -41,6 +41,11 @@ public enum QueryOperator {
     LIKE,
 
     /**
+     * Case-insensitive SQL like operation will be applied to specified field
+     */
+    ILIKE,
+
+    /**
      * The specified <code>values</code> must contain the specified <code>field</code>
      */
     IN,
