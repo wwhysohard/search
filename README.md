@@ -32,14 +32,14 @@ To use this library, add the following dependency to your `pom.xml` :
 <dependency>
     <groupId>io.github.wwhysohard</groupId>
     <artifactId>search</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
 Or, if you are using Gradle, `build.gradle` :
 
 ``` groovy
-implementation 'io.github.wwhysohard:search:1.1.0'
+implementation 'io.github.wwhysohard:search:1.2.0'
 ```
 
 
